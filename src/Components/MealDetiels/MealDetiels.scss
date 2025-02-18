@@ -1,0 +1,229 @@
+.meal-details {
+    background-color: #F8F9FA;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 0.5s ease-in;
+    .image-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        animation: slideIn 0.6s ease-out;
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        animation: slideUp 0.6s ease-out;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: transform 0.3s ease;
+          width: 45%;
+          justify-content: center;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+        }
+
+        .youtube-btn {
+          background-color: #FF0000;
+          color: white;
+        }
+
+        .source-btn {
+          background-color: #34D399;
+          color: white;
+        }
+
+        .icon {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .ingredients-section {
+        background-color: white;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        animation: scaleIn 0.5s ease-out;
+    
+        h2 {
+          font-family: 'Playfair Display', serif;
+          font-size: 2rem;
+          color: #2D3748;
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+    
+        .ingredients-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 1rem;
+    
+          .ingredient-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem;
+            border-bottom: 1px solid #E2E8F0;
+            animation: slideRight 0.5s ease-out;
+            animation-fill-mode: both;
+    
+            @for $i from 1 through 10 {
+              &:nth-child(#{$i}) {
+                animation-delay: #{$i * 0.1}s;
+              }
+            }
+    
+            .ingredient-name {
+              font-weight: 500;
+              color: #4A5568;
+            }
+    
+            .ingredient-measure {
+              color: #718096;
+              font-style: italic;
+            }
+          }
+        }
+      }
+  
+    .back-button {
+      background-color: #37B24D;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: transform 0.2s ease;
+  
+      &:hover {
+        transform: translateX(-5px);
+      }
+    }
+  
+    .meal-content {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3rem;
+      
+      img {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        animation: slideIn 0.6s ease-out;
+      }
+  
+      .meal-info {
+        animation: slideUp 0.6s ease-out;
+  
+        h1 {
+          font-size: 2.5rem;
+          color: #2D3748;
+          margin-bottom: 1rem;
+        }
+  
+        .category, .area {
+          display: inline-block;
+          background-color: #E9ECEF;
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          margin-right: 1rem;
+          margin-bottom: 1.5rem;
+          font-weight: 500;
+        }
+  
+        .instructions {
+          h2 {
+            font-size: 1.5rem;
+            color: #2D3748;
+            margin-bottom: 1rem;
+          }
+  
+          p {
+            line-height: 1.8;
+            color: #4A5568;
+          }
+        }
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .meal-details {
+      .meal-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  }
+  // Add new animation
+@keyframes scaleIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideRight {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  

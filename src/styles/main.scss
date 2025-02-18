@@ -1,0 +1,94 @@
+// Variables
+$primary-color: #37B24D;
+$secondary-color: #F76707;
+$text-color: #212529;
+$background-color: #F8F9FA;
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+// Category buttons
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  
+  .category-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: rgb(236, 140, 76);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    &.active {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+// Meal cards
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  
+  .meal-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+    }
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .meal-info {
+      padding: 1.5rem;
+      
+      h3 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+      
+      .view-recipe {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: $primary-color;
+        color: white;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+          opacity: 0.9;        }
+      }
+    }
+  }
+}
