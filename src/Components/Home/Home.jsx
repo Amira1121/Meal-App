@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mealApi } from '../../services/mealApi';
+import Loading from '../CategoryMeals/Loading/Loading';
 import './Home.scss';
 
 function Home() {
@@ -39,7 +40,7 @@ function Home() {
     fetchMeals();
   }, []);
 
-  if (loading) return <div className="loading">Loading...</div>;
+  if (loading) return <Loading />;
 
   return <>
     <div className="home">

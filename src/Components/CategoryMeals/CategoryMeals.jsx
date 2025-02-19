@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams ,useNavigate} from 'react-router-dom';
 import { mealApi } from '../../services/mealApi';
+import Loading from '../CategoryMeals/Loading/Loading';
+
 
 function CategoryMeals() {
   const [meals, setMeals] = useState([]);
@@ -39,7 +41,7 @@ function CategoryMeals() {
     fetchCategories();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
 
   return <>
 <div className="home">

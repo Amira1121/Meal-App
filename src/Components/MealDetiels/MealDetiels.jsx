@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { mealApi } from '../../services/mealApi';
+import Loading from '../CategoryMeals/Loading/Loading';
+
 import './MealDetiels.scss';
 
 
@@ -37,7 +39,7 @@ function MealDetiels() {
     fetchMeal();
   }, [id]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (!meal) return <div>Meal not found</div>;
 
   return (
